@@ -13,7 +13,6 @@ export default function App() {
   }
   return (
     <div>
-      <p onClick={handleClick}>{date.toLocaleTimeString()}</p>
       <button onClick={handleClick}>{date.toLocaleTimeString()}</button>
       <TextInputWithFocusButton />
       <InputComponent />
