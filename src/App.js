@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import {useState} from 'react';
+
+export default function App() {
+
+  let [date,setDate] = useState(new Date());
+
+  
+  function handleClick(e) {
+    setDate(new Date());
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p onClick={handleClick}>{date.toLocaleTimeString()}</p>
+      <button onClick={handleClick}>{date.toLocaleTimeString()}</button>
+      
     </div>
   );
-}
+}  
 
-export default App;
+
+
+/*
+
+import { useState } from 'react';
+
+export default function InputComponent() { 
+  const [inputText, setText] = useState('hello'); 
+
+  function handleChange(e) { 
+    setText(e.target.value); 
+  } 
+
+  return ( 
+    <> 
+      <input value={inputText} onChange={handleChange} /> 
+      <p>You typed: {inputText}</p> 
+      <button onClick={() => setText('hello')}> 
+        Reset 
+      </button> 
+    </> 
+  ); 
+} 
+  */
