@@ -1,5 +1,7 @@
 
 import {useState} from 'react';
+import TextInputWithFocusButton from './TextInputWithFocusButton';
+import InputComponent from './InputComponent';
 
 export default function App() {
 
@@ -13,32 +15,8 @@ export default function App() {
     <div>
       <p onClick={handleClick}>{date.toLocaleTimeString()}</p>
       <button onClick={handleClick}>{date.toLocaleTimeString()}</button>
-      
+      <TextInputWithFocusButton />
+      <InputComponent />
     </div>
   );
 }  
-
-
-
-/*
-
-import { useState } from 'react';
-
-export default function InputComponent() { 
-  const [inputText, setText] = useState('hello'); 
-
-  function handleChange(e) { 
-    setText(e.target.value); 
-  } 
-
-  return ( 
-    <> 
-      <input value={inputText} onChange={handleChange} /> 
-      <p>You typed: {inputText}</p> 
-      <button onClick={() => setText('hello')}> 
-        Reset 
-      </button> 
-    </> 
-  ); 
-} 
-  */
